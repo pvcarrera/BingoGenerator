@@ -1,0 +1,31 @@
+<! DOCTYPE html>
+<html lang=es>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <header>
+    <h1>Cartones de Bingo</h1>
+  </header>
+  <body>
+    <% @card = @page.cards[0]  %>
+    <div class=half>
+      <% (0..4).each do |index| 
+         @card = @page.cards[index]  %>
+        <%= erb :card_table %>
+      <% end%>
+    </div>
+    <div class=half>
+      <% (5..9).each do |index| 
+         @card = @page.cards[index]  %>
+        <%= erb :card_table %>
+      <% end%>
+    </div>
+    <div class=half>
+      <% (10..14).each do |index| 
+         @card = @page.cards[index]  %>
+        <%= erb :card_table %>
+      <% end%>
+    </div>
+  </body> 
+</html>

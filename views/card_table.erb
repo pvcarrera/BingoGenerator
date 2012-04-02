@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <% @card.row(1).each do |number|%>
+      <td class=<%= number == 0 ? 'gap' : number %>><%= number == 0 ? "" : number %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <% @card.row(2).each do |number|%>
+      <td class=<%= number == 0 ? 'gap' : number %>><%= number == 0 ? "" : number %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <% @card.row(3).each do |number|%>
+      <td class=<%= number == 0 ? 'gap' : number %>><%= number == 0 ? "" : number %></td>
+    <% end %>
+  </tr>
+</table>

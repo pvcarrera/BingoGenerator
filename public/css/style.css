@@ -1,0 +1,36 @@
+body {
+  width: 1814px; 
+  height: 1247px;
+  background-color: grey;
+}
+
+table {
+  border: 1px solid black;
+  width: 495px;
+  height: 211px;
+  margin-bottom: 20px;
+}
+
+td {
+    font: bold 27px "Trebuchet MS", Verdana, Arial, Helvetica,
+    sans-serif;
+    color: #6D929B;
+    border-right: 1px solid #C1DAD7;
+    border-bottom: 1px solid #C1DAD7;
+    border-top: 1px solid #C1DAD7;
+    letter-spacing: 2px;
+    text-align: center;
+    background: #CAE8EA url(images/bg_header.jpg) no-repeat;
+    width: 55px;
+}
+
+.gap {
+  background-color: aliceblue;
+}
+
+.half {
+  float: left;
+  width: 500px;
+  height: 938px;
+  padding-left: 45px;
+}
