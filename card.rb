@@ -18,6 +18,10 @@ class Card
     @card.map { |row| row[number - 1]}
   end
 
+  def to_a 
+    @card
+  end
+
   private
 
   def rand_n(n,min, max)

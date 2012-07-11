@@ -52,4 +52,8 @@ describe 'bingo card' do
     second_column_range.should include @card.column(9)[1]
     second_column_range.should include @card.column(9)[2]
   end
+
+  it 'can be recovered as an array' do
+    @card.to_a.should be_an_instance_of(Array)
+  end
 end
