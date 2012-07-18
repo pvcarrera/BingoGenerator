@@ -4,7 +4,11 @@ require 'prawn/measurement_extensions'
 
 class PdfPrinter < Prawn::Document
   def initialize
-    super(:page_size => [450.mm, 320.mm], :page_layout => :portrait)
+    super(
+      :page_size => [450.mm, 320.mm],
+      :margin => 0,
+      :page_layout => :portrait
+      )
   end
 
   def save_as(file)
