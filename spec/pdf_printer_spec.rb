@@ -27,6 +27,12 @@ describe 'pdf printer' do
       @pdf.add_page(Page.new)
       @pdf.page_count.should == 2;
     end
+    it 'mantain the grid structure for all pages' do 
+      @pdf.add_page(Page.new)
+      @pdf.go_to_page 2
+      @pdf.grid.columns.should == 4
+      @pdf.grid.rows.should == 6
+    end
   end
 
   context 'after save' do
