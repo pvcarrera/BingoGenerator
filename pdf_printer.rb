@@ -1,5 +1,6 @@
 require 'prawn'
 require './card'
+require './page'
 require 'prawn/measurement_extensions'
 
 class PdfPrinter < Prawn::Document
@@ -23,11 +24,15 @@ class PdfPrinter < Prawn::Document
     render_file(file)
   end
 
+  def add_page(page)
+    start_new_page
+  end 
+
   private
 
   def draw_table
     c = Card.new
-    table = make_table (c.card)
+    table = make_table (c.to_a)
     table.draw
   end
 end
