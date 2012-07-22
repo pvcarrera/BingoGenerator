@@ -9,7 +9,7 @@ describe 'pdf printer' do
     @pdf = PdfPrinter.new
   end
 
-  context 'default values' do
+  context 'default document values' do
     it 'has 450 mm width' do
       @pdf.bounds.width.should == 450.mm
     end
@@ -22,7 +22,7 @@ describe 'pdf printer' do
     end
   end
   
-  context 'before save' do
+  context 'pages' do
     it 'can add pages' do
       @pdf.add_page(Page.new)
       @pdf.page_count.should == 2;
