@@ -16,6 +16,10 @@ describe 'pdf printer' do
     it 'has 320 mm height' do
       @pdf.bounds.height.should == 320.mm
     end
+    it 'has a grid of 4X6 cells' do
+      @pdf.grid.columns.should == 4
+      @pdf.grid.rows.should == 6
+    end
   end
   
   context 'before save' do
@@ -26,7 +30,7 @@ describe 'pdf printer' do
   end
 
   context 'after save' do
-    it 'has created a file' do
+    xit 'has created a file' do
       
     end
   end
