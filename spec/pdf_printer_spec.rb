@@ -3,35 +3,29 @@ require './pdf_printer'
 require './page'
 require 'prawn/measurement_extensions'
 
-describe 'pdf printer' do
-
-  before(:each) do
-    @pdf = PdfPrinter.new
-  end
+describe PdfPrinter do
 
   context 'default document values' do
-    it 'has 450 mm width' do
-      @pdf.bounds.width.should == 450.mm
-    end
-    it 'has 320 mm height' do
-      @pdf.bounds.height.should == 320.mm
-    end
+    it {subject.bounds.width.should == 450.mm}
+
+    it {subject.bounds.height.should == 320.mm}
+
     it 'has a grid of 4X6 cells' do
-      @pdf.grid.columns.should == 4
-      @pdf.grid.rows.should == 6
+      subject.grid.columns.should == 4
+      subject.grid.rows.should == 6
     end
   end
   
   context 'pages' do
     it 'can add pages' do
-      @pdf.add_page(Page.new)
-      @pdf.page_count.should == 2;
+      subject.add_page(Page.new)
+      subject.page_count.should == 2;
     end
     it 'mantain the grid structure for all pages' do 
-      @pdf.add_page(Page.new)
-      @pdf.go_to_page 2
-      @pdf.grid.columns.should == 4
-      @pdf.grid.rows.should == 6
+      subject.add_page(Page.new)
+      subject.go_to_page 2
+      subject.grid.columns.should == 4
+      subject.grid.rows.should == 6
     end
   end
 
