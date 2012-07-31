@@ -14,6 +14,8 @@ describe PdfPrinter do
       subject.grid.columns.should == 4
       subject.grid.rows.should == 6
     end
+
+    it {subject.page_count.should == 1}
   end
   
   context 'pages' do
