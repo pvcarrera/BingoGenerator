@@ -32,8 +32,13 @@ describe PdfPrinter do
   end
 
   context 'after save' do
-    xit 'has created a file' do
-      
+
+    it 'has created a file' do
+     file_name = 'tem.pdf'
+     subject.save_as file_name
+     (File.exists? file_name).should == true
+     FileUtils.rm file_name
     end
+
   end
 end

@@ -14,6 +14,11 @@ class PdfPrinter < Prawn::Document
   end
 
   def save_as(file)
+    render_file(file)
+  end
+
+  def add_page(page)
+    start_new_page
     (0..3).each do |row| 
       (0..5).each do |col|
         grid(col, row).bounding_box do
@@ -21,11 +26,6 @@ class PdfPrinter < Prawn::Document
         end
       end
     end
-    render_file(file)
-  end
-
-  def add_page(page)
-    start_new_page
   end 
 
   private
